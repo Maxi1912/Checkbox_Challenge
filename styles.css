@@ -1,0 +1,12 @@
+input:checked + p {
+  text-decoration: line-through;
+}
+input,
+p {
+  display: inline-block;
+  margin: 2px;
+}
+
+.item {
+  margin: 10px;
+}
