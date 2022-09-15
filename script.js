@@ -1,11 +1,22 @@
-const input = document.querySelectorAll(".inbox input[type='checkbox']");
-// console.log(input)
+const checkboxes = document.querySelectorAll(".inbox input[type='checkbox']");
+
 let lastChecked;
+
 function hadleCheck(e) {
+  let inBetween = false;
+  if(e.shiftKey && this.checked) {
+    checkboxes.forEach(checkbox => {
+      console.log(checkbox);
+      if(checkbox === this || checkbox === lastChecked) {
+        inBetween = !inBetween
+        console.log('Our checked checkbok')
+      }
+    })
+  }
   lastChecked = this;
-  console.log(lastChecked);
+  // console.log(e);
 }
 
-input.forEach((checkbox) => {
+checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('click', hadleCheck);
 });
